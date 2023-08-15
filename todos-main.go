@@ -10,3 +10,6 @@ func todosToString(todos []string) string {
 	}
 	return strings.Replace(todosContent, "\n\r", "", -1)
 }
+
+const HelpCommand = "help"
+const CreateCommand = "create"
