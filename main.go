@@ -14,11 +14,6 @@ func main() {
 		fmt.Println("Add a new todo item:")
 		scanner.Scan()
 		todos = append(todos, scanner.Text())
-		fmt.Println("-----------------")
-		fmt.Println("Your todo list:")
-		for i := 0; i < len(todos); i ++ {
-			fmt.Println(todos[i])
-		}
-		fmt.Println("-----------------")
+		printHero("Your todo list:", todosToString(todos))
 	}
 }
