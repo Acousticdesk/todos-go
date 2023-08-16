@@ -2,11 +2,11 @@ package main
 
 import "strings"
 
-// import "strings"
+var todos = []string{}
 
 func todosToString(todos []string) string {
 	todosContent := ""
-	for i := 0; i < len(todos); i ++ {
+	for i := 0; i < len(todos); i++ {
 		todosContent += todos[i]
 		todosContent += "\n\r"
 	}
