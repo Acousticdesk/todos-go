@@ -8,6 +8,7 @@ import (
 
 func main() {
 	// todo akicha: the todos should not be here
+	// todo akicha: add status done
 	var todos []string
 	scanner := bufio.NewScanner(os.Stdin)
 	fmt.Println("TODO App")
