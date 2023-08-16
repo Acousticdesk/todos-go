@@ -20,10 +20,7 @@ func main() {
 			case CreateCommand:
 				todos = createCommand(todos)
 			case DoneCommand:
-				fmt.Println("Type what should be done:")
-				scanner.Scan()
-				todos = append(todos, scanner.Text())
-				printHero("Your todo list:", todosToString(todos))
+				todos = doneCommand(todos)
 			default:
 		}
 	}
