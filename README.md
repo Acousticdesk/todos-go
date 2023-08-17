@@ -18,7 +18,7 @@ The application allows you to create your todo list using CLI
 | done       | mark a todo as completed                            |
 | email      | send email with your todo list to a specified email |
 
-## Set up SMPT
+## Set up SMTP
 To send emails, you can use any SMTP server you like.
 I recommend using the Gmail SMTP, but make sure to read the [Guide from Google](https://myaccount.google.com/lesssecureapps) first.
 
