@@ -17,7 +17,7 @@ func createCommand(todos []string) []string {
 	for {
 		message := "Type what should be done:"
 		if (i > 0) {
-			message = "What else should be done? (type exit to finish or remove to remove the last entry)"
+			message = "What else should be done? (type exit to get back to the main menu or remove to remove the last entry)"
 		} 
 		fmt.Println(message)
 		scanner.Scan()

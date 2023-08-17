@@ -9,6 +9,7 @@ var commandList = [][]string{
 	{HelpCommand, "help menu"},
 	{CreateCommand, "create a todo"},
 	{DoneCommand, "mark a todo as done"},
+	{EmailCommand, "send your todo list to your email"},
 }
 
 func helpCommand() {

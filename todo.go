@@ -15,3 +15,4 @@ func todosToString(todos []string, renderBullet func(int) string) string {
 const HelpCommand = "help"
 const CreateCommand = "create"
 const DoneCommand = "done"
+const EmailCommand = "email"
