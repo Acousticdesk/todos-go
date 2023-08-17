@@ -2,8 +2,6 @@ package main
 
 import "strings"
 
-var todos = []string{}
-
 func todosToString(todos []string, renderBullet func(int) string) string {
 	todosContent := ""
 	for i := 0; i < len(todos); i++ {

@@ -7,8 +7,6 @@ import (
 )
 
 func main() {
-	// todo akicha: the todos should not be here
-	var todos []string
 	scanner := bufio.NewScanner(os.Stdin)
 	fmt.Println("TODO App")
 	for {
