@@ -7,6 +7,8 @@ import (
 )
 
 // todo akicha: create a reminder command
+// todo akicha: add possibility to edit a todo
+// todo akicha: show the current status of the todos using emojis
 func main() {
 	// todo akicha: the todos should not be here
 	// todo akicha: add status done

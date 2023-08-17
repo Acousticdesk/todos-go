@@ -13,9 +13,26 @@ func renderCreateCommandBullet(i int) string {
 
 func createCommand(todos []string) []string {
 	scanner := bufio.NewScanner(os.Stdin)
-	fmt.Println("Type what should be done:")
-	scanner.Scan()
-	todos = append(todos, scanner.Text())
-	printHero("Your todo list:", todosToString(todos, renderCreateCommandBullet))
-	return todos
+	i := 0
+	for {
+		message := "Type what should be done:"
+		if (i > 0) {
+			message = "What else should be done? (type exit to finish or remove to remove the last entry)"
+		} 
+		fmt.Println(message)
+		scanner.Scan()
+		if (scanner.Text() == "exit") {
+			return todos
+		}
+		if (scanner.Text() == "remove") {
+			if (len(todos) != 0) {
+				todos = todos[:len(todos) - 1]	
+			}
+			printHero("Your todo list:", todosToString(todos, renderCreateCommandBullet))
+			continue
+		}
+		todos = append(todos, scanner.Text())
+		printHero("Your todo list:", todosToString(todos, renderCreateCommandBullet))
+		i++
+	}
 }
