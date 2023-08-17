@@ -6,6 +6,7 @@ import (
 	"os"
 )
 
+// todo akicha: create a reminder command
 func main() {
 	// todo akicha: the todos should not be here
 	// todo akicha: add status done
