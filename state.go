@@ -1,4 +1,4 @@
 package main
 
-var todos []string
+var todos []todo
 var userEmail string = ""

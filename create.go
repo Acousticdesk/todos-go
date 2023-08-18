@@ -11,7 +11,7 @@ func renderCreateCommandBullet(i int) string {
 	return strconv.Itoa(i + 1) + " "
 }
 
-func createCommand(todos []string) []string {
+func createCommand(todos []todo) []todo {
 	scanner := bufio.NewScanner(os.Stdin)
 	i := 0
 	for {
@@ -31,7 +31,7 @@ func createCommand(todos []string) []string {
 			printHero("Your todo list:", todosToString(todos, renderCreateCommandBullet))
 			continue
 		}
-		todos = append(todos, scanner.Text())
+		todos = append(todos, todo{ title: scanner.Text(), completed: false})
 		printHero("Your todo list:", todosToString(todos, renderCreateCommandBullet))
 		i++
 	}
