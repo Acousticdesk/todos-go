@@ -1,14 +1,42 @@
 package main
 
 import (
-	"fmt"
 	"bufio"
+	"fmt"
 	"os"
 	"strconv"
+	"time"
 )
 
 func renderCreateCommandBullet(i int) string {
 	return strconv.Itoa(i + 1) + " "
+}
+
+func internalRemoveCommand(todos []todo) {
+	if (len(todos) != 0) {
+		todos = todos[:len(todos) - 1]	
+	}
+	printHero("Your todo list:", todosToString(todos, renderCreateCommandBullet))
+}
+
+func internalCreateCommand() {
+	scanner := bufio.NewScanner(os.Stdin)
+	todoTitle := scanner.Text()
+	message := "Is there a due date? (YYYY-MM-DD HH:MM:SS). Type skip to continue."
+	fmt.Println(message)
+	var todoDueDate time.Time
+	for (scanner.Text() != "skip") {
+		scanner.Scan()
+		scannedDueDate, err := time.Parse("2006-01-02 15:04:05", scanner.Text())
+		if (err != nil) {
+			fmt.Println("Oops, we did not recognize the date. Try again:")
+			continue
+		}
+		todoDueDate = scannedDueDate
+		break
+	}
+	todos = append(todos, todo{ title: todoTitle, completed: false, dueDate: todoDueDate })
+	printHero("Your todo list:", todosToString(todos, renderCreateCommandBullet))
 }
 
 func createCommand(todos []todo) []todo {
@@ -25,14 +53,10 @@ func createCommand(todos []todo) []todo {
 			return todos
 		}
 		if (scanner.Text() == "remove") {
-			if (len(todos) != 0) {
-				todos = todos[:len(todos) - 1]	
-			}
-			printHero("Your todo list:", todosToString(todos, renderCreateCommandBullet))
+			internalRemoveCommand(todos)
 			continue
 		}
-		todos = append(todos, todo{ title: scanner.Text(), completed: false})
-		printHero("Your todo list:", todosToString(todos, renderCreateCommandBullet))
+		internalCreateCommand()
 		i++
 	}
 }

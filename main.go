@@ -28,6 +28,8 @@ func main() {
 				continue
 			}
 			emailCommand()
+		case ExitCommand:
+			return
 		default:
 		}
 	}

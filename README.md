@@ -32,3 +32,4 @@ That's it, no more configuration is needed to send the emails
 ## Roadmap
 
 - Add email notifications about the items in the todo list
+- Add priorities

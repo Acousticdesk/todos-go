@@ -10,6 +10,8 @@ var commandList = [][]string{
 	{CreateCommand, "create a todo"},
 	{DoneCommand, "mark a todo as done"},
 	{EmailCommand, "send your todo list to your email"},
+	{EmailCommand, "send your todo list to your email"},
+	{ExitCommand, "quit the application"},
 }
 
 func helpCommand() {
